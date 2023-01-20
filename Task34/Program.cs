@@ -27,10 +27,10 @@ void PrintArray(int[] arr)
 
 int EvenNumbers(int[] arr)
 {
-    int count = 0;
+    int count = 0;   //счетчик четных чисел
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr [i] % 2 == 0)
+        if (arr [i] % 2 == 0) //условие нахождения четных чисел в массиве
         {
         count++;
         }
