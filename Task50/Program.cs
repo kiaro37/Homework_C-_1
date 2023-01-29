@@ -57,7 +57,7 @@ void SearchElement(int[,] matrix)
 }
 
 
-Console.Clear();
+
 int[,] matrix2D = CreateMatrixRndInt(4, 8, -10, 10);
 PrintMatrix(matrix2D);
 Console.WriteLine();
