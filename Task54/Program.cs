@@ -36,19 +36,27 @@ void PrintMatrix(int[,] matrix)
 
 }
 
-int SortMinMaxMatrix(int[,] matrix)
+void Sort(int[,] matrix)
 {
-    int row, col;
-    int[,] newMatrix;
-    for (row = 0; row < matrix.GetLength(0); row++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        Array.Sort(newMatrix[row]);
+        for (int m = 0; m < matrix.GetLength(1); m++)
+        {
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+            {
+                if (matrix[i, j] < matrix[i, j + 1])
+                {
+                    int tmp = matrix[i, j];
+                    matrix[i, j] = matrix[i, j + 1];
+                    matrix[i, j + 1] = tmp;
+                }
+            }
+        }
     }
-    return newMatrix;
 }
 
-
-int[,] matrix2D = CreateMatrixRndInt(4, 4, -10, 10);
+int[,] matrix2D = CreateMatrixRndInt(4, 4, 1, 10);
 PrintMatrix(matrix2D);
 Console.WriteLine();
-SortMinMaxMatrix(matrix2D);
+Sort(matrix2D);
+PrintMatrix(matrix2D);
