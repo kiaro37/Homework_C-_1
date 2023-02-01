@@ -20,20 +20,17 @@ int SumMinToMax(int m, int n)
     {
         if (n < 0) n = 0;
         {
-            if (m < 0 && n < 0) return n;
+            if (m > n)
             {
-                if (m > n)
-                {
-                    if (m == n) return n;
-                    return SumMinToMax(m - 1, n) + m;
-                }
-                if (m < n)
-                {
-                    if (m == n) return n;
-                    return SumMinToMax(m + 1, n) + m;
-                }
-                else return n;
+                if (m == n) return n;
+                return SumMinToMax(m - 1, n) + m;
             }
+            if (m < n)
+            {
+                if (m == n) return n;
+                return SumMinToMax(m + 1, n) + m;
+            }
+            else return n;
         }
     }
 }
