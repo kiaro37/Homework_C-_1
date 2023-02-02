@@ -40,7 +40,7 @@ void Sort(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int m = 0; m < matrix.GetLength(1); m++)
+        for (int m = 0; m < matrix.GetLength(0); m++)
         {
             for (int j = 0; j < matrix.GetLength(1) - 1; j++)
             {
